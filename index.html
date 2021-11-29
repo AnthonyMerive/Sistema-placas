@@ -24,30 +24,31 @@
 
             <div class="form-group">
                 <label for="propietario">
-                   <strong>Propietario del vehículo:</strong> 
+                    <strong>Propietario del vehículo:</strong>
                 </label>
-                <input type="text" class="form-control shadow-sm" id="propietario"
-                    placeholder="Propitario del vehículo" required>
+                <input type="text" class="form-control shadow-sm" id="propietario" placeholder="Propitario del vehículo"
+                    required>
             </div>
 
             <div class="form-group py-3">
                 <label for="modelo "><strong>Módelo del vehículo:</strong></label>
-                <input type="text" class="form-control shadow-sm" id="modelo"
-                    placeholder="Módelo del vehículo" required>
+                <input type="text" class="form-control shadow-sm" id="modelo" placeholder="Módelo del vehículo"
+                    required>
             </div>
 
-            <div class="row py-3">
+            <div class="form-group row py-3">
 
                 <div class="col-5">
                     <label for="Placa"><strong>Placa</strong></label>
-                    <input type="text" class="form-control shadow-sm" id="placa" placeholder="ABC00A"
-                        required>
+                    <input type="text" class="form-control shadow-sm" id="placa" placeholder="ABC00A" required>
                 </div>
 
                 <div class="col-7">
                     <label for="tipo"><strong>Tipo vehículo</strong></label>
-                    <input type="text" class="form-control shadow-sm" id="tipo" placeholder="Carro o Moto"
-                        required>
+                    <select class="form-control shadow-sm" id="tipo">
+                        <option>Carro</option>
+                        <option>Moto</option>
+                    </select>
                 </div>
 
             </div>
@@ -61,59 +62,55 @@
 
                 <div class="col-4">
                     <label for="incio"><strong>Hora de inicio </strong></label>
-                    <input type="datetime" class="form-control shadow-sm" id="incio" placeholder="HH:MM"
-                        required>
+                    <input type="datetime" class="form-control shadow-sm" id="incio" placeholder="HH:MM" required>
                 </div>
 
                 <div class="col-4">
                     <label for="Salida"><strong>Cantidad de Horas</strong></label>
-                    <input type="datetime" class="form-control shadow-sm" id="salida" placeholder="Horas"
-                        required>
+                    <input type="datetime" class="form-control shadow-sm" id="salida" placeholder="Horas" required>
                 </div>
 
             </div>
 
-            <div class="row py-3">
+            <div id="montos" class="py-3">
 
-                <div class="col-4">
-                    <label for="entryDate"><strong>Valor inicial:</strong></label>
-                    <input type="text" class="form-control shadow-sm" id="entryDate" 
-                    readonly>
-                </div>
+                <div class="row">
 
-                <div class="col-4">
-                    <label for="incio"><strong>Descuento total: </strong></label>
-                    <input type="datetime" class="form-control shadow-sm" id="incio"
-                    readonly>
-                </div>
+                    <div class="col-4">
+                        <label for="valor"><strong>Valor inicial:</strong></label>
+                        <input type="text" class="form-control shadow-sm" id="valor" readonly>
+                    </div>
 
-                <div class="col-4">
-                    <label for="Salida"><strong>Total a pagar:</strong></label>
-                    <input type="datetime" class="form-control shadow-sm" id="salida"
-                    readonly>
+                    <div class="col-4">
+                        <label for="descuento"><strong>Descuento total: </strong></label>
+                        <input type="text" class="form-control shadow-sm" id="descuento" readonly>
+                    </div>
+
+                    <div class="col-4">
+                        <label for="total"><strong>Total a pagar:</strong></label>
+                        <input type="text" class="form-control shadow-sm" id="total" readonly>
+                    </div>
+
                 </div>
 
             </div>
 
             <div class="d-flex justify-content-center container my-5">
 
-                <button class="btn btn-danger" type="button" id="btnCalcula">
+                <button class="btn btn-danger" type="button" id="btnCalcula" onclick=calcular()>
                     Calcular
                 </button>
-                <button class="btn btn-dark ms-1" type="button" id="btnImprime">
+                <button id="btnImprimir" class="btn btn-dark ms-1" type="button" id="btnImprime" onclick="window.print()">
                     Imprimir
                 </button>
-    
+
             </div>
 
         </form>
 
-       
-    
-
     </div>
-       
 
+    <script src="./index.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
